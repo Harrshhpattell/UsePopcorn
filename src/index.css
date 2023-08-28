@@ -227,7 +227,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  /* gap: 2rem; */
   font-size: 1.6rem;
   font-weight: 600;
 }
