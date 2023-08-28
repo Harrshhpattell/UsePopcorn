@@ -211,7 +211,7 @@ body {
 /* ******* */
 
 .summary {
-  padding: 2.2rem 3.2rem 1.8rem 3.2rem;
+  padding: 2.2rem 3rem 1.8rem 3rem;
   border-radius: 0.9rem;
   background-color: var(--color-background-100);
   box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
@@ -226,7 +226,8 @@ body {
 .summary div {
   display: flex;
   align-items: center;
-  gap: 2.4rem;
+  justify-content: space-between;
+  gap: 2rem;
   font-size: 1.6rem;
   font-weight: 600;
 }
