@@ -54,8 +54,25 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  overflow: scroll;
+  overflow-y: scroll;
   position: relative;
+}
+
+.box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.box::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .loader {
