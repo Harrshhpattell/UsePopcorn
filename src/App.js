@@ -12,6 +12,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
+  const [showMessageBox, setShowMessageBox] = useState(true);
   // const [watched, setWatched] = useState([]);
   // const [watched, setWatched] = useState(function () {
   //   const storedValue = localStorage.getItem("watched");
@@ -38,6 +39,9 @@ export default function App() {
 
   function handleDeteleWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
+  }
+  function handleContinue() {
+    setShowMessageBox(false);
   }
 
   useEffect(
@@ -91,6 +95,12 @@ export default function App() {
 
   return (
     <>
+      <MessageBox
+        show={showMessageBox}
+        message="Great news! Your watched list movies are now automatically stored in local storage, so you can enjoy your list worry-free. 🎉
+        (✨ Your previous watched list is back!)"
+        onContinue={handleContinue}
+      />
       <NavBar>
         <Search query={query} setQuery={setQuery} />
         <Numresults movies={movies} />
@@ -137,6 +147,22 @@ function ErrorMessage({ message }) {
       <span> ⛔ </span>
       {message}
     </p>
+  );
+}
+
+function MessageBox({ show, message, onContinue }) {
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div className="message-box-container">
+      <div className="message-box">
+        <h1>New Feature Added</h1>
+        <p>{message}</p>
+        <button onClick={onContinue}>X</button>
+      </div>
+    </div>
   );
 }
 
